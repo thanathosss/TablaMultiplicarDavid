@@ -43,8 +43,10 @@ public class TablaMultiplicar {
 	    }
 	    	return listatexto;
 	    }
-
-	   
+	    /**
+	     * convierte la lista a un string
+	     */
+	    String resultado = listatexto.toString();
 
 
 	}
