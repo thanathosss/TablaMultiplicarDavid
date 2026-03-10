@@ -13,6 +13,6 @@ public class LanzadorTablaMultiplicar {
 		
 		programa = new ControlTablaMultiplicar();
 		
-		programa.bucleprincipal();
+		programa.buclePrincipal();
 	}
 }
