@@ -8,27 +8,43 @@ public class TablaMultiplicar {
 		private static int numero;
 		private List<String> listatexto;
 	    public TablaMultiplicar(int numero) {
-	       //tipo//
 	    	this.numero = numero;
 	    }
-
+	    /**
+	     * generar la tabla de multiplicar con el numero dado
+	     * y añadirlo a la lista
+	     */
 	    public void generarTabla() {
 	        for (int i = 1; i <= 10; i++) {
 	        	int operacion = numero*i;
-	        	listatexto.add("numero*i=operacion");
+	        	listatexto.add("numero*i=operacion\n");
 	  
 	    }
 	    }
+	    /**
+	     * genera la tabla de multiplicar y la añade a la lista
+	     * @return listatexto devuelve la lista 
+	     */
 	    public List<String> toListaExportacion() {
-			return listatexto;
-	    	
+	    	 for (int i = 1; i <= 10; i++) {
+		        	int operacion = numero*i;
+		        	listatexto.add("numero*i=operacion\n");
 	    }
+	    	return listatexto;
+	    }
+	    /**
+	     * genera la tabla de multiplicar y la añade a la lista 
+	     * @return listatexto devuelve la lista
+	     */
 	    public List<String> toListaPantalla(){
+	    	 for (int i = 1; i <= 10; i++) {
+		        	int operacion = numero*i;
+		        	listatexto.add("numero*i=operacion\n");
+	    }
 	    	return listatexto;
 	    }
 
-	    public static void main(String[] args) {
-	    }
+	   
 
 
 	}
