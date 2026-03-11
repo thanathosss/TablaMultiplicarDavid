@@ -8,7 +8,8 @@ import java.util.List;
  * Exporta los resultados en un documento externo y los guarda
  */
 public class ExportaciónArchivo {
-	private File refArchivo = new File(refArchivo);
+	private String rutaArchivo;
+	private File refArchivo = new File(rutaArchivo);
 	/**
 	 * exporta los ficheros a un archivo 
 	 * @param rutaArchivo la ruta del archivo en el que se quiere exportar los resultados 
@@ -16,7 +17,7 @@ public class ExportaciónArchivo {
 	public void exportacionArchivo(String rutaArchivo) {
 		try {
 			PrintWriter out = new PrintWriter(refArchivo);
-			out.println("HolaMundo");
+			out.println();
 			out.close();
 			} catch (FileNotFoundException e) {
 			System.err.printf("Ruta no encontrada: %s",

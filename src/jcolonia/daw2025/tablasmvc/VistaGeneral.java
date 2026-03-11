@@ -3,6 +3,9 @@ package jcolonia.daw2025.tablasmvc;
 import java.util.List;
 
 public class VistaGeneral {
+	private String FORMATO_PRINTF_MOSTRARTEXTO;
+	
+	private String FORMATO_PRINTF_MOSTRARAVISO;
 	
 	
 	public static void mostrarTexto(String string) {
@@ -38,6 +41,9 @@ public class VistaGeneral {
 
 	public static void mostrarLista( List<String> lista) {
 	
+		
+	}
+	public void getScEntrada() {
 		
 	}
 
