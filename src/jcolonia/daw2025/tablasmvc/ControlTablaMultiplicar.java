@@ -39,7 +39,7 @@ public class ControlTablaMultiplicar {
 		
 		do{
 			menú.mostrarOpciones();
-			opción=menú.pedirOpción();
+			opción=menú.pedirOpcion();
 			
 			switch(opción){
 			case 1: // Mostrar tabla
