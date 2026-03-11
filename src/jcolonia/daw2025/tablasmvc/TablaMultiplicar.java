@@ -8,7 +8,7 @@ public class TablaMultiplicar {
 		private static int numero;
 		private List<String> listatexto;
 	    public TablaMultiplicar(int numero) {
-	    	this.numero = numero;
+	    	TablaMultiplicar.numero = numero;
 	    }
 	    /**
 	     * generar la tabla de multiplicar con el numero dado

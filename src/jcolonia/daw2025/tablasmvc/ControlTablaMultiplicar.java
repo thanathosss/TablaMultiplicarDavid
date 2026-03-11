@@ -1,4 +1,7 @@
 package jcolonia.daw2025.tablasmvc;
+
+import java.util.List;
+
 /**
 * Núcleo de aplicación de consola de texto con menús. Aplicación
 * de texto usando tablas de multiplicar infantiles clásicas. 
@@ -9,6 +12,8 @@ public class ControlTablaMultiplicar {
 	*/
 	public static final String FORMATO_RUTA_ARCHIVO_EXPORTACIÓN=
 		"tabla del %02d.txt";
+
+
 	
 	/** Tabla de multiplicar activa. */
 	private TablaMultiplicar tabla;
@@ -76,7 +81,7 @@ public class ControlTablaMultiplicar {
 	private void cambiarTabla(){
 		int n;
 		
-		VistaGeneral.pedirNúmero("Introduzca el número para la tabla");
+		VistaGeneral.pedirNumero("Introduzca el número para la tabla");
 		
 		tabla=new TablaMultiplicar(n);
 		tabla.generarTabla();
