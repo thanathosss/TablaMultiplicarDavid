@@ -6,7 +6,12 @@ import java.util.List;
 * Núcleo de aplicación de consola de texto con menús. Aplicación
 * de texto usando tablas de multiplicar infantiles clásicas. 
 */
-public class ControlTablaMultiplicar {
+public class ControlTablaMultiplicar extends TablaMultiplicar{
+	public ControlTablaMultiplicar(int numero) {
+		super(numero);
+		// TODO Auto-generated constructor stub
+	}
+
 	/** Formato tipo «printf» para el nombre del archivo de
 	* exportación.
 	*/
@@ -18,9 +23,7 @@ public class ControlTablaMultiplicar {
 	/** Tabla de multiplicar activa. */
 	private TablaMultiplicar tabla;
 
-	public ControlTablaMultiplicar(){
-		init();
-	}
+	
 
 
 	/**
@@ -73,13 +76,15 @@ public class ControlTablaMultiplicar {
 	* Muestra por pantalla -envía a la salida estándar-
 	* los productos correspondientes a la tabla activa.
 	*/
-	private void mostrarTabla(){}
+	private void mostrarTabla(){
+		System.out.println(resultado);
+	}
 	
 	/**
 	* Cambia la tabla activa por otra elegida por el usuario.
 	*/
-	private void cambiarTabla(){
-		int n;
+	private void cambiarTabla(n){
+		int n = 0;
 		
 		VistaGeneral.pedirNumero("Introduzca el número para la tabla");
 		
@@ -91,13 +96,17 @@ public class ControlTablaMultiplicar {
 	* Envía a un archivo
 	* los productos correspondientes a la tabla activa.
 	*/
-	private void exportarTabla(){}
+	private void exportarTabla(){
+		
+	}
 	
 	/**
 	 * Muestra un mensaje de aviso indicando que 
 	 * la opción elegida no está disponible.
 	*/
-	private void opciónNoDisponible(){}
+	private void opciónNoDisponible(){
+		System.out.println("Opcion no disponible");
+	}
 
 
 
