@@ -17,7 +17,7 @@ public class TablaMultiplicar {
 	    public void generarTabla() {
 	        for (int i = 1; i <= 10; i++) {
 	        	int operacion = numero*i;
-	        	listatexto.add("numero*i=operacion\n");
+	        	listatexto.add(numero+"*"+i+"="+operacion+"\n");
 	  
 	    }
 	    }
@@ -28,7 +28,7 @@ public class TablaMultiplicar {
 	    public List<String> toListaExportacion() {
 	    	 for (int i = 1; i <= 10; i++) {
 		        	int operacion = numero*i;
-		        	listatexto.add("numero*i=operacion\n");
+		        	listatexto.add(numero+"*"+i+"="+operacion+"\n");
 	    }
 	    	return listatexto;
 	    }
@@ -39,7 +39,7 @@ public class TablaMultiplicar {
 	    public List<String> toListaPantalla(){
 	    	 for (int i = 1; i <= 10; i++) {
 		        	int operacion = numero*i;
-		        	listatexto.add("numero*i=operacion\n");
+		        	listatexto.add(numero+"*"+i+"="+operacion+"\n");
 	    }
 	    	return listatexto;
 	    }
