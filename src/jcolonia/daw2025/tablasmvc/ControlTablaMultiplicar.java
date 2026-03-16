@@ -31,7 +31,7 @@ public class ControlTablaMultiplicar extends TablaMultiplicar{
 	* tabla activa.
 	*/
 	public void init(){
-		cambiarTabla();
+		
 	}
 
 	/**
@@ -83,8 +83,8 @@ public class ControlTablaMultiplicar extends TablaMultiplicar{
 	/**
 	* Cambia la tabla activa por otra elegida por el usuario.
 	*/
-	private void cambiarTabla(n){
-		int n = 0;
+	private void cambiarTabla(int n){
+		n = 0;
 		
 		VistaGeneral.pedirNumero("Introduzca el número para la tabla");
 		

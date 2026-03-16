@@ -14,51 +14,56 @@ public class VistaGeneral {
 		
 	}
 
-	public static void mostrarAviso(String aviso) {
-		System.out.println(aviso);
+	public static void mostrarAviso(String texto) {
+		System.out.println(texto);
 		
 	}
-	public static void mostrarTítulo1(String Título1) {
-		System.out.println(Título1);
+	public static void mostrarTítulo1(String texto) {
+		System.out.println(texto);
 		
 	}
-	public static void mostrarTítulo2(String Título2) {
-		System.out.println(Título2);
+	public static void mostrarTítulo2(String texto) {
+		System.out.println(texto);
 		 
 	}
-	public static int pedirNumero() {
-		try (Scanner numero = new Scanner(System.in)) {
-			int numeropedido = numero.nextInt();
-			return numeropedido;
-		}
+	public static int pedirNumero(String texto) {
+			System.out.printf("diga un número");
+			Scanner numeropedido = getScEntrada() ;
+			return numeropedido.nextInt();
+		
 	}
-	public static void pausa(String string) {
+	public static void pausa(String texto) {	
+	}
 	
-		
-	}
-	public static boolean pedirConfirmacion(String string) {
-		System.out.println("Esta seguro de esto?");
-		Scanner confirmacion = new Scanner(System.in);
-		String confir = confirmacion.nextLine();
-		if (confir = "Y") {
-			return true;
-		}
-		if (confir = "N") {
-			return false;
-		}
-		else {
-			System.out.println("Error, escriba Y o N");
-		}
+	public static boolean pedirConfirmacion(String texto) {
+	    Scanner escanerEntrada;
+	    String linea;
+	    escanerEntrada = getScEntrada();
 
-		
+	    while (true) {
+	        System.out.printf("%s (S/N): ", texto);
+	        linea = escanerEntrada.nextLine().trim().toUpperCase();
+
+	        if (linea.equals("S")) {
+	            return true;
+	        } 
+	        else if (linea.equals("N")) {
+	            return false;
+	        } 
+	        else {
+	            System.out.println("Error, escriba S o N");
+	        }
+	    }
 	}
 
-	public static void mostrarLista( List<String> lista) {
-	
-		
+	public static void mostrarLista(List<String> lista) {
+	    for (String elemento : lista) {
+	        System.out.println(elemento);
+	    }
 	}
-	public void getScEntrada() {
-		
+	public static Scanner getScEntrada() {
+		Scanner Sc = new Scanner(System.in);
+		return Sc;
 	}
 
 }
