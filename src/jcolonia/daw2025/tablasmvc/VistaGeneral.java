@@ -24,7 +24,7 @@ public class VistaGeneral {
 	}
 	public static void mostrarTítulo2(String Título2) {
 		System.out.println(Título2);
-		
+		 
 	}
 	public static int pedirNumero() {
 		try (Scanner numero = new Scanner(System.in)) {
