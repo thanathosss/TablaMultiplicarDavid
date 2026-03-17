@@ -1,54 +1,35 @@
 package jcolonia.daw2025.tablasmvc;
+
 import java.util.List;
 
 public class TablaMultiplicar {
-	
 
-	
-		private static int numero;
-		private List<String> listatexto;
-	    public TablaMultiplicar(int numero) {
-	    	TablaMultiplicar.numero = numero;
-	    }
-	    /**
-	     * generar la tabla de multiplicar con el numero dado
-	     * y añadirlo a la lista
-	     */
-	    public void generarTabla() {
-	        for (int i = 1; i <= 10; i++) {
-	        	int operacion = numero*i;
-	        	listatexto.add(numero+"*"+i+"="+operacion+"\n");
-	  
-	    }
-	    }
-	    /**
-	     * genera la tabla de multiplicar y la añade a la lista
-	     * @return listatexto devuelve la lista 
-	     */
-	    public List<String> toListaExportacion() {
-	    	 for (int i = 1; i <= 10; i++) {
-		        	int operacion = numero*i;
-		        	listatexto.add(numero+"*"+i+"="+operacion+"\n");
-	    }
-	    	return listatexto;
-	    }
-	    /**
-	     * genera la tabla de multiplicar y la añade a la lista 
-	     * @return listatexto devuelve la lista
-	     */
-	    public List<String> toListaPantalla(){
-	    	 for (int i = 1; i <= 10; i++) {
-		        	int operacion = numero*i;
-		        	listatexto.add(numero+"*"+i+"="+operacion+"\n");
-	    }
-	    	return listatexto;
-	    }
-	    /**
-	     * convierte la lista a un string
-	     */
-	    String resultado = listatexto.toString();
+    protected int numero;
+    protected List<String> listatexto;
 
+    public TablaMultiplicar(int numero) {
+        this.numero = numero;
+        this.listatexto = new java.util.ArrayList<>();
+    }
 
-	}
+    public void generarTabla() {
+        listatexto.clear();
 
+        for (int i = 1; i <= 10; i++) {
+            int resultado = numero * i;
+            listatexto.add(numero + " * " + i + " = " + resultado);
+        }
+    }
 
+    public List<String> getLista() {
+        return listatexto;
+    }
+
+    public int getNumero() {
+        return numero;
+    }
+
+    public void setNumero(int numero) {
+        this.numero = numero;
+    }
+}

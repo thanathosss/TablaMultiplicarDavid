@@ -1,114 +1,84 @@
 package jcolonia.daw2025.tablasmvc;
 
-import java.util.List;
+public class ControlTablaMultiplicar extends TablaMultiplicar {
 
-/**
-* Núcleo de aplicación de consola de texto con menús. Aplicación
-* de texto usando tablas de multiplicar infantiles clásicas. 
-*/
-public class ControlTablaMultiplicar extends TablaMultiplicar{
-	public ControlTablaMultiplicar(int numero) {
-		super(numero);
-		// TODO Auto-generated constructor stub
-	}
+    public static final String FORMATO_RUTA_ARCHIVO_EXPORTACIÓN =
+            "tabla del %02d.txt";
 
-	/** Formato tipo «printf» para el nombre del archivo de
-	* exportación.
-	*/
-	public static final String FORMATO_RUTA_ARCHIVO_EXPORTACIÓN=
-		"tabla del %02d.txt";
+    public ControlTablaMultiplicar(int numero) {
+        super(numero);
+    }
 
+    public static final java.util.List<String> OPCIONES_MENÚ_PRINCIPAL =
+            java.util.Arrays.asList(
+                    "Mostrar tabla",
+                    "Cambiar tabla",
+                    "Exportar tabla"
+            );
 
-	
-	/** Tabla de multiplicar activa. */
-	private TablaMultiplicar tabla;
+    public void init() {
+        int n = 0;
+		try {
+			n = VistaGeneral.pedirNumero("Introduzca un número");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        setNumero(n);
+        generarTabla();
+    }
 
-	
+    public void buclePrincipal() {
+        VistaMenú menú;
+        int opción;
 
+        menú = new VistaMenú("Tablas de multiplicar", OPCIONES_MENÚ_PRINCIPAL);
 
-	/**
-	* Pide al usuario un número y prepara la primera
-	* tabla activa.
-	*/
-	public void init(){
-		
-	}
+        do {
+            menú.mostrarOpciones();
+            opción = menú.pedirOpcion();
 
-	/**
-	* Gestión del menú principal. Desde este menú
-	* se ejecutan las opciones disponibles a elección del usuario.
-	* A la salida del menú se finaliza el programa.
-	*/
-	public void buclePrincipal(){
-		VistaMenú menú;
-		int opción;
-		
-		menú=new VistaMenú("Tablas de multiplicar",OPCIONES_MENÚ_PRINCIPAL);
-		
-		do{
-			menú.mostrarOpciones();
-			opción=menú.pedirOpcion();
-			
-			switch(opción){
-			case 1: // Mostrar tabla
-				mostrarTabla();
-				break;
-			case 2: //Cambiar tabla
-				cambiarTabla();
-				break;
-			case 3: // Exportar tabla
-				exportarTabla();
-				break;
-			case 0: // Salir
-				break;
-			default: // Opciones no implementadas
-				opciónNoDisponible();
-				break;
-			}
-			
-		} while (opción!=0);
-		
-		VistaGeneral.mostrarAviso("FIN");
-		
-	}
-	
-	/**
-	* Muestra por pantalla -envía a la salida estándar-
-	* los productos correspondientes a la tabla activa.
-	*/
-	private void mostrarTabla(){
-		System.out.println(resultado);
-	}
-	
-	/**
-	* Cambia la tabla activa por otra elegida por el usuario.
-	*/
-	private void cambiarTabla(int n){
-		n = 0;
-		
-		VistaGeneral.pedirNumero("Introduzca el número para la tabla");
-		
-		tabla=new TablaMultiplicar(n);
-		tabla.generarTabla();
-	}
+            switch (opción) {
+                case 1:
+                    mostrarTabla();
+                    break;
+                case 2:
+                    cambiarTabla();
+                    break;
+                case 3:
+                    exportarTabla();
+                    break;
+                case 0:
+                    break;
+                default:
+                    opciónNoDisponible();
+            }
 
-	/**
-	* Envía a un archivo
-	* los productos correspondientes a la tabla activa.
-	*/
-	private void exportarTabla(){
-		
-	}
-	
-	/**
-	 * Muestra un mensaje de aviso indicando que 
-	 * la opción elegida no está disponible.
-	*/
-	private void opciónNoDisponible(){
-		System.out.println("Opcion no disponible");
-	}
+        } while (opción != 0);
 
+        VistaGeneral.mostrarAviso("FIN");
+    }
 
+    private void mostrarTabla() {
+        VistaGeneral.mostrarLista(getLista());
+    }
 
+    private void cambiarTabla() {
+        int n = VistaGeneral.pedirNumero("Nuevo número:");
+        setNumero(n);
+        generarTabla();
+    }
 
+    private void exportarTabla() {
+        String nombre = String.format(FORMATO_RUTA_ARCHIVO_EXPORTACIÓN, getNumero());
+
+        ExportaciónArchivo exportador = new ExportaciónArchivo(nombre);
+        exportador.guardar(getLista());
+
+        VistaGeneral.mostrarAviso("Exportado a " + nombre);
+    }
+
+    private void opciónNoDisponible() {
+        System.out.println("Opción no disponible");
+    }
 }
