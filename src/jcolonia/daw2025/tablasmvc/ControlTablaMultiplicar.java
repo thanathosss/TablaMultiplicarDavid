@@ -18,12 +18,7 @@ public class ControlTablaMultiplicar extends TablaMultiplicar {
 
     public void init() {
         int n = 0;
-		try {
 			n = VistaGeneral.pedirNumero("Introduzca un número");
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
         setNumero(n);
         generarTabla();
     }
