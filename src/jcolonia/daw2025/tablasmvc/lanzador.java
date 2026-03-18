@@ -1,5 +1,7 @@
 package jcolonia.daw2025.tablasmvc;
-
+/**
+ * lanza el menu
+ */
 public class lanzador {
     public static void main(String[] args) {
 
